@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace MovingWindow.WindowCommands
 {
@@ -18,19 +13,19 @@ namespace MovingWindow.WindowCommands
             this.pixelsPerMove = pixelsPerMove;
         }
 
-        public bool IsCommandAvailable(KeyEventArgs commandKey)
+        public bool IsCommandAvailable(Keys commandKey)
         {
             bool isCommandAvailable = false;
-            if (commandKey.KeyData == Keys.Right)
+            if (commandKey == Keys.Right)
             {
                 isCommandAvailable = true;
             }
             return isCommandAvailable;
         }
 
-        public void PerformCommand(KeyEventArgs commandKey)
+        public void PerformCommand(Keys commandKey)
         {
-            if (commandKey.KeyData == Keys.Right)
+            if (commandKey == Keys.Right)
             {
                 if (currentForm.Left + currentForm.Width + pixelsPerMove < Screen.PrimaryScreen.Bounds.Width)
                 {

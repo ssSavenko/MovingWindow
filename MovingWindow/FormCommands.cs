@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MovingWindow.WindowCommands;
 using System.Windows.Forms;
-using MovingWindow.WindowCommands;
 
 namespace MovingWindow
 {
@@ -17,21 +12,14 @@ namespace MovingWindow
             windowCommands = new IWindowCommand[]
             {
                 new WindowDownCommand(currentForm, pixelPerMove),
+                new WindowCommandCenter(currentForm),
                 new WindowLeftCommand(currentForm, pixelPerMove),
                 new WindowRightCommand(currentForm, pixelPerMove),
                 new WindowUpCommand(currentForm, pixelPerMove)
             };
         }
 
-        public void PerformCommand(KeyEventArgs commandKey)
-        {
-            foreach (var command in windowCommands)
-            {
-                command.PerformCommand(commandKey);
-            }
-        }
-
-        public bool IsCommandAvailable(KeyEventArgs commandKey)
+        public bool IsCommandAvailable(Keys commandKey)
         {
             bool isCommandAvailable = false;
             foreach (var command in windowCommands)
@@ -43,6 +31,14 @@ namespace MovingWindow
                 }
             }
             return isCommandAvailable;
+        }
+
+        public void PerformCommand(Keys commandKey)
+        {
+            foreach (var command in windowCommands)
+            {
+                command.PerformCommand(commandKey);
+            }
         }
     }
 }

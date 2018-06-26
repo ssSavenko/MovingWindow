@@ -18,21 +18,21 @@ namespace MovingWindow.WindowCommands
             this.pixelsPerMove = pixelsPerMove;
         }
 
-        public bool IsCommandAvailable(KeyEventArgs commandKey)
+        public bool IsCommandAvailable(Keys commandKey)
         {
             bool isCommandAvailable = false;
-            if (commandKey.KeyData == Keys.Up)
+            if (commandKey == Keys.Up)
             {
                 isCommandAvailable = true;
             }
             return isCommandAvailable;
         }
 
-        public void PerformCommand(KeyEventArgs commandKey)
+        public void PerformCommand(Keys commandKey)
         {
-            if (commandKey.KeyData == Keys.Up)
+            if (commandKey == Keys.Up)
             {
-                if (currentForm.Top + currentForm.Height - pixelsPerMove > Screen.PrimaryScreen.Bounds.Height)
+                if (currentForm.Top - pixelsPerMove > 0)
                 {
                     currentForm.Top = currentForm.Top - pixelsPerMove;
                 }

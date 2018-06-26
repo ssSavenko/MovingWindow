@@ -1,37 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MovingWindow
 {
     internal partial class MyForm : Form
     {
-        private char lastCommand;
         private FormCommands formCommands;
+        private Keys lastCommand;
         private const int pixelPerMove = 6;
+
         public MyForm()
         {
             InitializeComponent();
             formCommands = new FormCommands(this, pixelPerMove);
-            lastCommand = ' ';
+            lastCommand = Keys.Down;
         }
 
         private void MoveTimer_Tick(object sender, EventArgs e)
         {
+            formCommands.PerformCommand(lastCommand);
         }
 
-        private void MyForm_KeyPress(object sender, KeyPressEventArgs e)
+        private void MyForm_KeyDown(object sender, KeyEventArgs e)
         {
-            
-            if (formCommands.PerformCommand(e))
+            if(formCommands.IsCommandAvailable(e.KeyData))
             {
-                lastCommand = e.KeyChar;
+                lastCommand = e.KeyData;
             }
         }
     }
