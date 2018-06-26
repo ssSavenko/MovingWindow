@@ -1,6 +1,6 @@
 ﻿namespace MovingWindow
 {
-    partial class Form1
+    partial class MyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.MoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // MoveTimer
+            // 
+            this.MoveTimer.Enabled = true;
+            this.MoveTimer.Tick += new System.EventHandler(this.MoveTimer_Tick);
+            // 
+            // MyForm
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(300, 300);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(300, 300);
+            this.Name = "MyForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MyForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer MoveTimer;
     }
 }
 
