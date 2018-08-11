@@ -16,7 +16,7 @@ namespace MovingWindow.WindowCommands
         public bool IsCommandAvailable(Keys commandKey)
         {
             bool isCommandAvailable = false;
-            if(commandKey == Keys.Down)
+            if (commandKey == Keys.Down)
             {
                 isCommandAvailable = true;
             }

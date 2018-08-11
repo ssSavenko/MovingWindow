@@ -20,7 +20,7 @@ namespace MovingWindow
             formCommands.PerformCommand(lastCommand);
         }
 
-        private void MyForm_KeyDown(object sender, KeyEventArgs e)
+        private void MyForm_KeyDown (object sender, KeyEventArgs e)
         {
             if(formCommands.IsCommandAvailable(e.KeyData))
             {
