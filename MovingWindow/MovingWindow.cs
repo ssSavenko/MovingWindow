@@ -5,9 +5,9 @@ namespace MovingWindow
 {
     internal partial class MovingWindow : Form
     {
+        private const int pixelPerMove = 6;
         private FormCommands formCommands;
         private Keys lastCommand;
-        private const int pixelPerMove = 6;
 
         public MovingWindow()
         {
