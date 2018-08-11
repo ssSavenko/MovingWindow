@@ -15,17 +15,17 @@ namespace MovingWindow
             formCommands = new FormCommands(this, pixelPerMove);
         }
 
-        private void MoveTimer_Tick(object sender, EventArgs e)
+        private void Form_KeyDown(object sender, KeyEventArgs e)
         {
-            formCommands.PerformCommand(lastCommand);
-        }
-
-        private void Form_KeyDown (object sender, KeyEventArgs e)
-        {
-            if(formCommands.IsCommandAvailable(e.KeyData))
+            if (formCommands.IsCommandAvailable(e.KeyData))
             {
                 lastCommand = e.KeyData;
             }
+        }
+
+        private void MoveTimer_Tick(object sender, EventArgs e)
+        {
+            formCommands.PerformCommand(lastCommand);
         }
     }
 }
