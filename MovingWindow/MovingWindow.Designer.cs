@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.MoveTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-            this.KeyDown += MyForm_KeyDown;
+            this.KeyDown += Form_KeyDown;
             // 
             // MoveTimer
             // 
