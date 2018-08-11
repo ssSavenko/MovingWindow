@@ -3,13 +3,13 @@ using System.Windows.Forms;
 
 namespace MovingWindow
 {
-    internal partial class MyForm : Form
+    internal partial class MovingWindow : Form
     {
         private FormCommands formCommands;
         private Keys lastCommand;
         private const int pixelPerMove = 6;
 
-        public MyForm()
+        public MovingWindow()
         {
             InitializeComponent();
             formCommands = new FormCommands(this, pixelPerMove);

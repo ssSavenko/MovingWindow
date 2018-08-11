@@ -1,6 +1,6 @@
 ﻿namespace MovingWindow
 {
-    partial class MyForm
+    partial class MovingWindow
     {
         /// <summary>
         /// Required designer variable.
