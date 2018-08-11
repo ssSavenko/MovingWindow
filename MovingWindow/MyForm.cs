@@ -13,7 +13,6 @@ namespace MovingWindow
         {
             InitializeComponent();
             formCommands = new FormCommands(this, pixelPerMove);
-            lastCommand = Keys.Down;
         }
 
         private void MoveTimer_Tick(object sender, EventArgs e)
